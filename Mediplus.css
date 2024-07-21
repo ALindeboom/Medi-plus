@@ -1,0 +1,2108 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* --------------------Preloader-------------------------*/
+.preload {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 1s ease;
+}
+
+.preloaderSlider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.preLeft, .preRight {
+    position: absolute;
+    height: 100vh;
+    width: 70%;
+    background-color: rgb(61, 114, 212);
+    animation: preload 1.5s linear forwards ;
+}
+
+.preLeft {
+    left: 0;
+}
+
+.preRight {
+    right: 0;
+}
+
+@keyframes preload {
+    100% {
+        width: 0;
+    }
+}
+
+.preloader {
+    width: 96px;
+    height: 48px;
+    position: absolute;
+    display: block;
+    aspect-ratio: 1/1;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+    z-index: 11;
+    animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --------------------Header-------------------------*/
+header {
+    width: 100%;
+}
+
+ul {
+    width: 280px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left: 300px;
+}
+
+li a {
+    color:black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+li a:hover {
+    color:rgb(61, 114, 212);
+}
+
+.contact {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+    margin-left: 1170px;
+}
+
+i.fa-solid.fa-phone.fa-xs {
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+    color: rgb(61, 114, 212);
+}
+
+.phonenumber {
+    margin-right: 30px;
+}
+
+.phonenumber:hover {
+    color:rgb(61, 114, 212);
+    cursor: pointer;
+}
+
+i.fas.fa-envelope {
+    width: 30px;
+    height: 30px;
+    color: rgb(61, 114, 212);
+}
+
+.email:hover {
+    color:rgb(61, 114, 212);
+    cursor: pointer;
+}
+
+hr {
+    width: 100%;
+    border-top: 1px solid rgb(235, 229, 229);
+}
+
+.mediplus {
+    width: 180px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 300px; 
+    margin-right: 100px;
+}
+
+.staticHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.3);
+    z-index: 15;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 35px;
+}
+
+.navbar {
+    overflow: hidden;
+    margin-top: 15px;
+    margin-left: 150px;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a.navBtn {
+    width: 100px;
+    height: 60px;
+    padding-top: 20px;
+}
+
+a.navBtn2 {
+    width: 104px;
+    height: 60px;
+    padding-top: 20px;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+  
+.dropdown .dropbtn {
+    width: 100px;
+    height: 60px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    color:rgb(61, 114, 212);
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 25;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    margin-top: 0px;
+    border-top: solid 3px rgb(61, 114, 212);
+    border-left: solid 3px rgb(61, 114, 212);
+}
+
+button.open-close {
+    background: rgb(61, 114, 212);
+    border: 2px solid;
+    border-radius: 5px;
+    margin-left: 90px;
+    padding: 1em 2em;
+    color: white;
+    transition: 0.25s;
+}
+
+button.open-close:hover,
+button.open-close:focus {
+    border-color: black;
+    color: white;
+    box-shadow:
+        inset -6.5em 0 0 0 black,
+        inset 6.5em 0 0 0 black;
+}
+
+/* --------------------Main - Content-------------------------*/
+
+main {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+}
+
+/* --------------------Slider-------------------------*/
+
+.sliderContainer {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    padding-top: 0px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    animation-duration: 2s;
+    z-index: 1;
+}
+
+.slide-left {
+    animation-name: slidein-left;
+}
+
+.slide-right {
+    animation-name: slidein-right;
+}
+
+@keyframes slidein-left {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slidein-right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+.slide .image {
+    width: 110%;
+    height: 900px;
+    object-fit: cover;
+    object-position: 20% 210%;
+    z-index: 1;
+}
+
+.textContainer {
+    position: absolute;
+    z-index: 4;
+    width: 500px;
+    height: 300px;
+}
+
+h1 {
+    font-size: 20px;
+    color: black;
+}
+
+p {
+    font-size: 12px;
+    color: black;
+}
+
+.selectors {
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    margin-top: 260px;
+}
+
+.selectors a {
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    background-color: rgb(61, 114, 212);
+    border-radius: 50%;
+}
+
+.selectors a:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.selectors .previous {
+    margin-left: 20px;
+    padding: 0 14px 5px 12px;
+}
+
+.selectors .next {
+    float: right;
+    margin-right: 40px;
+    padding: 0 12px 5px 14px;
+}
+
+.textContainer h1 {
+    width: 500px;
+    height: 80px;
+    color: black;
+}
+
+.textContainer p {
+    flex-direction: row;
+    color: black
+}
+
+.threeContainers {
+    display: flex;
+    width: 1200px;
+    height: 260px;
+    margin-top: -130px;
+    margin-left: 350px;
+    position: absolute;
+    z-index: 3;
+    justify-content: space-between;
+}
+
+#movingSlider h1 {
+    width: 500px;
+    text-align: left;
+    z-index: 4;
+    position: absolute;
+    color: black;
+    margin-top: -500px;
+    margin-left: 350px;
+    font-size: 40px;
+    animation: titleh1 2s ease 1s;
+}
+
+@keyframes titleh1 {
+    from {
+        transform: translateY(80px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+#movingSlider h1 span {
+    color: rgb(61, 114, 212);
+}
+
+#movingSlider p {
+    width: 650px;
+    text-align: left;
+    z-index: 4;
+    position: absolute;
+    color: black;
+    margin-top: -370px;
+    margin-left: 350px;
+    font-size: 18px;
+    animation: titlep 2s ease 2s;
+}
+
+@keyframes titlep {
+    from {
+        transform: translateY(60px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+button.getAppointment {
+    position: absolute;
+    background: rgb(61, 114, 212);
+    border: none;
+    border-radius: 5px;
+    margin-top: -270px;
+    margin-left: 50px;
+    padding: 1em 2em;
+    color: white;
+    transition: 0.25s;
+    z-index: 4;
+    animation: titlebutton 2s ease 3s;
+}
+
+@keyframes titlebutton {
+    from {
+        transform: translateY(-60px);
+    }
+    to {
+        transform: translateY(60px);
+    }
+}
+
+button.getAppointment:hover,
+button.getAppointment:focus {
+    border-color: black;
+    color: white;
+    box-shadow:
+        inset -6.5em 0 0 0 black,
+        inset 6.5em 0 0 0 black;
+}
+
+.aboutUsBtn {
+    position: absolute;
+    background: black;
+    border: none;
+    border-radius: 5px;
+    margin-top: -270px;
+    margin-left: 220px;
+    padding: 1em 2em;
+    color: white;
+    transition: 0.5s;
+    z-index: 4;
+    animation: titlebutton 2s ease 3s;
+}
+
+.aboutUsBtn:hover,
+.aboutUsBtn:focus {
+    border-color: rgb(61, 114, 212);
+    color: white;
+    box-shadow:
+        inset -6.5em 0 0 0 rgb(61, 114, 212),
+        inset 6.5em 0 0 0 rgb(61, 114, 212);
+}
+
+.container {
+    width: 400px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    background-color:rgb(61, 114, 212);
+    border-radius: 7px;
+}
+
+.container:hover {
+    box-shadow: 10px 60px 30px -40px rgb(61, 114, 212);
+    margin-top: -12px;
+    transition: 0.5s;
+}
+
+.threeContainers p {
+    width: 280px;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+.threeContainers h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 22px;
+    color: white;
+}
+.threeContainers .btnArrow {
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 16px;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.btnArrow:hover {
+    cursor: pointer;
+}
+
+.container .fas.fa-arrow-right {
+    margin-top: -38px;
+    padding-left: 120px;
+    width: 14px;
+    height: 16px;
+    color: white;
+}
+
+.threeContainers .fa-solid.fa-truck-medical.fa-flip-horizontal {
+    margin-left: 280px;
+    font-size: 100px;
+    color: rgb(105, 149, 231);
+    overflow: hidden;
+}
+
+.threeContainers .fa-solid.fa-clipboard-list {
+    margin-left: 320px;
+    margin-top: -15px;
+    font-size: 100px;
+    color: rgb(105, 149, 231);
+    overflow: hidden;
+}
+
+.threeContainers .fa-regular.fa-clock {
+    margin-left: 250px;
+    margin-top: 190px;
+    font-size: 100px;
+    color: rgb(105, 149, 231);
+    overflow: hidden;
+}
+
+.threeContainers .containerDayTime {
+    width: 400px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    background-color:rgb(61, 114, 212);
+    border-radius: 7px;
+}
+
+.containerDayTime h2 {
+    padding-bottom: 20px;
+}
+
+.containerDayTime:hover {
+    box-shadow: 10px 60px 30px -40px rgb(61, 114, 212);
+    margin-top: -12px;
+    transition: 0.5s;
+}
+
+.daysLeft {
+    padding-left: 20px;
+    color: white;
+}
+
+.times {
+    padding-top: 20px;
+}
+
+.timeRight .time {
+    color: white;
+}
+
+.containerDayTime .fas.fa-arrow-right {
+    margin-top: -38px;
+    padding-left: 120px;
+    width: 14px;
+    height: 16px;
+    color: white;
+}
+
+.container, .containerDayTime {
+    width: 400px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    background-color: rgb(61, 114, 212);
+    border-radius: 7px;
+    position: relative; /* Added */
+    overflow: hidden; /* Added */
+}
+
+.container:hover, .containerDayTime:hover {
+    box-shadow: 10px 60px 30px -40px rgb(61, 114, 212);
+    margin-top: -12px;
+    transition: 0.5s;
+}
+
+.threeContainers p {
+    width: 280px;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+.threeContainers h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 22px;
+    color: white;
+}
+
+.threeContainers .btnArrow {
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 16px;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.btnArrow:hover {
+    cursor: pointer;
+}
+
+.container .fas.fa-arrow-right,
+.containerDayTime .fas.fa-arrow-right {
+    margin-top: -38px;
+    padding-left: 120px;
+    width: 14px;
+    height: 16px;
+    color: white;
+}
+
+.threeContainers .fa-solid.fa-truck-medical.fa-flip-horizontal {
+    position: absolute; /* Added */
+    right: -15px; /* Adjusted */
+    bottom: -30px; /* Adjusted */
+    font-size: 100px;
+    color: rgb(105, 149, 231);
+    overflow: hidden;
+}
+
+.threeContainers .fa-solid.fa-clipboard-list {
+    position: absolute; /* Added */
+    right: 0px; /* Adjusted */
+    bottom: -20px; /* Adjusted */
+    font-size: 100px;
+    color: rgb(105, 149, 231);
+    overflow: hidden;
+}
+
+.threeContainers .fa-regular.fa-clock {
+    position: absolute; /* Added */
+    right: -15px; /* Adjusted */
+    bottom: -25px; /* Adjusted */
+    font-size: 100px;
+    color: rgb(105, 149, 231);
+    overflow: hidden;
+}
+
+.daysLeft {
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+}
+
+.times {
+    padding-top: 20px;
+}
+
+.timeRight .time {
+    color: white;
+}
+
+/* --------------------Text paragraph/ We are always ready... -------------------------*/
+
+.containerReady {
+   width: 800px;
+   height: 400px;
+   margin-top: 150px;
+   margin-left: 620px;
+   justify-content: center;
+}
+
+h3 {
+    width: 640px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.section {
+    width: 60px;
+    margin-left: 285px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.containerReady p {
+    width: 600px;
+    margin-bottom: 50px ;
+    text-align: center;
+    color: grey;
+    font-size: 20px;
+}
+
+.threeItems {
+    width: 1000px;
+    margin-left: -150px;
+}
+
+.itemsRow {
+    display: flex;
+    flex-direction: row;
+    margin-left: 80px;
+}
+
+.btn {
+    width: 90px;
+    height: 90px;color: rgb(61, 114, 212, 0.8);
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+}
+
+.btn:hover {
+    height: 90px;color: white;
+    background-color: rgb(61, 114, 212, 0.8);
+}
+
+i.fa-solid.fa-truck-medical.fa-flip-horizontal {
+  font-size: 30px;
+}
+
+i.fa-solid.fa-staff-snake {
+    font-size: 30px;
+}
+
+i.fa-solid.fa-stethoscope {
+    font-size: 40px;
+}
+
+.dots {
+    margin-top: 40px;
+    margin-left: 70px;
+    margin-right: 40px;
+    font-size: 24px;
+    color:rgb(61, 114, 212, 0.8);
+}
+
+.wrapCol {
+    width: 1100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col {
+    width: 300px;
+    text-align: center;
+}
+
+.col .title-eh {
+    width: 300px;
+    margin-top: 20px;
+    margin-left: -20px;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+}
+
+.col .title-ep {
+    width: 300px;
+    margin-top: 20px;
+    margin-left:-100px;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+}
+
+.col .title-mt {
+    width: 300px;
+    margin-top: 20px;
+    margin-left:-180px;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+}
+
+.col .p-eh {
+    width: 300px;
+    margin-top: 20px;
+    margin-left: -20px;
+    font-size: 16px;
+}
+
+.col .p-ep {
+    width: 300px;
+    margin-top: 20px;
+    margin-left: -110px;
+    font-size: 16px;
+}
+
+.col .p-mt {
+    width: 300px;
+    margin-top: 20px;
+    margin-left: -185px;
+    font-size: 16px;
+}
+
+/* --------------------Hands with overlay-------------------------*/
+
+.hands {
+    width: 100%;
+    padding-top: 200px;
+}
+
+.hands img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 5% -80%;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    margin-top: -300px;
+    background-color: rgb(61, 114, 212, 0.8);
+    z-index: 1;
+}
+
+.componentcontainer {
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(4, 250px);
+    margin-top: -200px;
+    padding-left: 480px;
+    width: 100%;
+}
+
+.component {
+    display: flex;
+    width: 300px;
+    height: 140px;
+    margin: auto;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.btnRound {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.btnRound:hover {
+    background-color: white;
+}
+
+.component i {
+    font-size: 30px;
+    color: white;
+}
+
+.component i:hover {
+    font-size: 30px;
+    color:  rgb(61, 114, 212, 0.8);
+}
+
+.component .number {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.component p {
+    margin-top: 50px;
+    margin-right: 25px;
+    margin-left: -60px;
+    font-size: 18px;
+    color: white;
+}
+
+/* --------------------Text paragraph/ We offer different Services.... -------------------------*/
+
+.containerServices {
+    width: 800px;
+    height: 400px;
+    padding-left: 680px;
+    justify-content: center;
+ }
+
+ h3 {
+    width: 640px;
+    text-align: center;
+    font-size: 40px;
+ }
+ 
+ .section2 {
+    width: 60px;
+    margin-left: 285px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+ }
+ 
+ .containerServices p {
+    width: 620px;
+    text-align: center;
+    color: grey;
+    font-size: 20px;
+ }
+
+/* --------------------Text "Who we are" / Video paragraph-------------------------*/
+
+.wrapTextVideo {
+    width: 1100px;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-areas:
+        "leftContainer rightContainer";
+    margin-top: -50px;
+    padding-left: 750px;
+    justify-content: center;
+}
+
+.leftContainer {
+    grid-area: leftContainer;
+}
+
+.textWho {
+    color: black;
+    font-size: 30px;
+}
+
+.blueLine {
+    width: 60px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1.5px solid rgb(61, 114, 212);
+}
+
+.leftContainer p {
+    width: 500px;
+    margin-bottom: 30px;
+    color: grey;
+    font-size: 16px;
+}
+
+.leftContainer p.special {
+    width: 450px;
+}
+
+.bars {
+    display: grid;
+    width: 600px;
+    grid-template-areas:
+        "leftBar rightBar"
+}
+
+.bars i {
+    color: white;
+}
+
+.leftBar {
+    width: 250px;
+    grid-area: leftBar;
+    color: grey;
+}
+
+.btnArrow {
+    width: 20px;
+    height: 20px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(61, 114, 212, 0.8);
+}
+
+.btnText {
+    margin-top: -40px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.rightBar {
+    width: 250px;
+    grid-area: rightBar;
+    color: grey;
+}
+
+.rightContainer {
+    grid-area: rightContainer;
+    margin-left: 50px;
+}
+
+.video {
+    width: 550px;
+    height: 350px;
+    object-fit: cover;
+}
+
+i.fa-regular.fa-circle-play {
+    position: absolute;
+    z-index: 4;
+    width: 80px;
+    height: 80px;
+    margin-top: -230px;
+    margin-left: 225px;
+    padding-top: 18px;
+    color: white;
+    background-color: rgb(61, 114, 212);
+    font-size: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popUpContainer {
+    display: none;
+    width: 900px;
+    height: 500px;
+    position: absolute;
+    z-index: 6;
+    margin-left: -400px;
+    margin-top: -400px;
+    background-color: rgb(48, 47, 47);
+}
+
+.popUpContainer.responsive {
+    position: absolute;
+    display: block;
+}
+
+i.fa-solid.fa-circle-exclamation {
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+    color: black;
+    background-color: rgb(48, 47, 47);
+    position: absolute;
+    z-index: 7;
+    margin-top: 180px;
+    margin-left: 200px;
+}
+
+.popUpContainer h6 {
+    margin-top: 200px;
+    margin-left: 300px;
+    font-size: 24px;
+    color: white;
+}
+
+.popUpContainer p {
+    margin-left: 300px;
+    font-size: 20px;
+    color: white;
+}
+
+i.fa-solid.fa-play {
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    float: right;
+    margin-top: 210px;
+    margin-right: 10px;
+    padding-top: 7px;
+    padding-left: 18px;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+#popClose {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: -285px;
+    margin-left: 880px;
+    font-size: 18px;
+    float: right;
+    z-index: -1;
+    position: relative;
+    color: black;
+    border: none;
+}
+
+/* --------------------Text /blue picture-------------------------*/
+
+.scanner {
+    width: 100%;
+    padding-top: 100px;
+}
+
+.scanner img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 5% -80%;
+}
+
+.overlay2 {
+    position: absolute;
+    width: 100%;
+    height: 422px;
+    margin-top: -424px;
+    background-color: rgb(61, 114, 212, 0.8);
+    z-index: 1;
+}
+
+.overlayText {
+    position: absolute;
+    z-index: 2;
+    margin-top: -300px;
+    margin-left: 700px;
+}
+
+.title {
+    width: 600px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+.overlayText p {
+    width: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.contactButton {
+    width: 150px;
+    height: 50px;
+    margin-left: 130px;
+    margin-right: 15px;
+    font-size: 16px;
+    background-color: white;
+    color:  rgb(61, 114, 212, 0.8);
+    border: 1px solid white;
+    transition: 0.25s;
+}
+
+.contactButton:hover,
+button.open-close:focus {
+    cursor: pointer;
+    z-index: 3;
+    border-color: white;
+    color: white;
+    box-shadow:
+        inset -9.8em 0 0 0 rgba(14, 72, 179, 0.8),
+        inset 9.8em 0 0 0 rgba(14, 72, 179, 0.8);
+}
+
+.LMButton {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    transition: 0.25s;
+}
+
+.LMButton:hover,
+button.open-close:focus {
+    cursor: pointer;
+    z-index: 3;
+    border-color: rgba(14, 72, 179, 0.8);
+    color: white;
+    box-shadow:
+        inset -4.7em 0 0 0 rgba(14, 72, 179),
+        inset 4.7em 0 0 0 rgba(14, 72, 179);
+}
+
+i.fas.fa-arrow-right {
+    margin-left: 5px;
+}
+
+/* --------------------Text / 4 pictures-------------------------*/
+
+.containerRules {
+    width: 1000px;
+    height: 400px;
+    padding-left: 620px;
+    justify-content: center;
+}
+
+.containerRules h3 {
+    width: 700px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.containerRules .section {
+    width: 60px;
+    margin-left: 310px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.containerRules p {
+    width: 550px;
+    margin-left: 60px;
+    text-align: center;
+    color: grey;
+    font-size: 18px;
+}
+
+.pictureFrame {
+    width: 100%;
+    display: grid;
+    margin-top: -50px;
+    column-gap: 25px;
+    grid-template-areas:
+        "main1 main2 main3 main4";
+}
+
+.pic {
+    width: 440px;
+    height: 350px;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+img.fourPictures {
+    width: 440px;
+}
+
+.overlayPicture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(61, 114, 212, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.overlayPicture .vdBTN {
+    width: 150px;
+    height: 50px;
+    margin-top: 150px;
+    font-size: 16px;
+    background-color: white;
+    color:  rgb(61, 114, 212, 0.8);
+    border: 1px solid white;
+    transition: 0.25s;
+}
+
+.vdBTN:hover,
+.vdBTN:focus {
+    cursor: pointer;
+    z-index: 3;
+    border-color: rgba(14, 72, 179, 0.8);
+    color: white;
+    box-shadow:
+        inset -4.7em 0 0 0 black,
+        inset 4.7em 0 0 0 black;
+}
+
+/* --------------------Text "...Different Services.." / 6 tekstblokjes-------------------------*/
+
+.containerDifferentServices {
+    width: 1000px;
+    height: 400px;
+    margin-left: 620px;
+    justify-content: center;
+}
+
+.containerDifferentServices h3 {
+    width: 700px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.containerDifferentServices .section {
+    width: 60px;
+    margin-left: 310px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.containerDifferentServices p {
+    width: 550px;
+    margin-left: 60px;
+    text-align: center;
+    color: grey;
+    font-size: 18px;
+}
+
+.sortsOfServices {
+    width: 1300px;
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    grid-template-areas:
+        "general teeth heart"
+        "ear vision blood";
+    margin-left: 400px;
+    justify-content: center;
+}
+
+.sortsOfServices i {
+    float: left;
+    font-size: 50px;
+    color: rgb(61, 114, 212, 0.8);
+}
+
+.icons .fas.fa-tooth {
+    margin: 0;
+}
+
+.rightText {
+    margin-left: 80px;
+}
+
+.title2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.title2:hover {
+    color: rgb(61, 114, 212);
+}
+
+.pTreatment {
+    width: 350px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: grey;
+}
+
+/* --------------------Text / 3 containers and grey background-------------------------*/
+
+.greyBackground {
+    width: 100%;
+    height: 1000px;
+    background-color:  rgb(237, 242, 247);
+}
+
+.greyBackground .bestTreatment {
+    width: 800px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 620px;
+    justify-content: center;
+}
+
+h3 {
+    width: 640px;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.section {
+    width: 60px;
+    margin-left: 285px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.greyBackground .bestTreatment p {
+    width: 600px;
+    margin-bottom: 50px ;
+    text-align: center;
+    color: grey;
+    font-size: 20px;
+}
+
+.threePriceContainers {
+    display: flex;
+    margin: auto;
+    width: 1240px;
+    height: 800px;
+    justify-content: space-between;
+}
+
+.containerPS {
+    width: 380px;
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgrey;
+}
+
+.fas.fa-scissors.fa-rotate-270 {
+    font-size: 60px;
+    margin: 50px 0 30px 160px;
+    color: rgb(61, 114, 212, 0.8);
+}
+
+.kindOfTreatment {
+    text-align: center;
+    font-size: 22px;
+}
+
+.price {
+    margin-left: 140px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(61, 114, 212, 0.8);
+}
+
+.perVisit {
+    position: absolute;
+    margin-top: -62px;
+    margin-left: 210px;
+    color: grey;
+    font-size: 18px;
+}
+
+li  {
+    margin-left: 30px;
+    list-style-type: none;
+    line-height: 2.0;
+    color: grey;
+}
+
+i.fas.fa-circle-check {
+    width: 10px;
+    height: 10px;
+    margin-top: -22px;
+    margin-right: 50px;
+    float: right;
+    color: rgb(61, 114, 212, 0.8);
+}
+
+i.fas.fa-circle-xmark {
+    width: 10px;
+    height: 10px;
+    margin-top: -22px;
+    margin-right: 50px;
+    float: right;
+    color:  rgb(196, 190, 190);
+}
+
+.bookBtn {
+    width: 315px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color:rgb(61, 114, 212);
+    border: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.bookBtn:hover,
+.bookBtn:focus {
+    border-color: black;
+    color: white;
+    box-shadow:
+        inset -11.5em 0 0 0 black,
+        inset 11.5em 0 0 0 black;
+}
+
+
+.containerTW {
+    width: 380px;
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgrey;
+}
+
+i.fas.fa-tooth {
+    font-size: 60px;
+    margin: 50px 0 30px 160px;
+    color: rgb(61, 114, 212, 0.8);
+}
+
+.containerHS {
+    width: 380px;
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgrey;
+}
+
+i.fas.fa-heart-pulse {
+    font-size: 60px;
+    margin: 50px 0 30px 160px;
+    color: rgb(61, 114, 212, 0.8);
+}
+
+/* --------------------Text paragraph / 3 containers-------------------------*/
+
+.MedicalNews {
+    width: 800px;
+    height: 400px;
+    margin-left: 620px;
+    justify-content: center;
+}
+
+h3 {
+    width: 640px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.section {
+    width: 60px;
+    margin-left: 285px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.MedicalNews p {
+    width: 600px;
+    margin-left: 10px;
+    text-align: center;
+    color: grey;
+    font-size: 20px;
+}
+
+.wrapper-containers {
+    display: flex;
+    margin: auto;
+    width: 1100px;
+    justify-content: space-between;
+}
+
+.containerOne {
+    width: 350px;
+    height: 450px;
+    border: 1px solid lightgrey;
+    box-shadow: 5px 10px 18px lightgrey;
+}
+
+.containerOne:hover {
+    border-bottom: 2px solid rgb(61, 114, 212);
+}
+
+.imageOne {
+    width: 350px;
+    height: 220px;
+}
+
+.date {
+    width: 110px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: white;
+    background-color: rgb(61, 114, 212, 0.8);
+}
+
+.Subtitle {
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 24px;
+    font-size: 20px;
+}
+
+.comment {
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 24px;
+    font-size: 16px;
+    color: grey;
+}
+
+.containerTwo {
+    width: 350px;
+    height: 450px;
+    border: 1px solid lightgrey;
+    box-shadow: 5px 10px 18px lightgrey;
+}
+
+.containerTwo:hover {
+    border-bottom: 2px solid rgb(61, 114, 212);
+}
+
+.imageTwo {
+    width: 350px;
+    height: 220px;
+}
+
+.containerThree {
+    width: 350px;
+    height: 450px;
+    border: 1px solid lightgrey;
+    box-shadow: 5px 10px 18px lightgrey;
+}
+
+.containerThree:hover {
+    border-bottom: 2px solid rgb(61, 114, 212);
+}
+
+.imageThree {
+    width: 350px;
+    height: 220px;
+}
+
+/* --------------------Handshake + Logo's-------------------------*/
+
+.handshake {
+    padding-top: 100px;
+}
+
+.handshakeBackground {
+    width: 100%;
+    height: 280px;
+}
+
+.overlay3 {
+    position: absolute;
+    width: 100%;
+    height: 280px;
+    margin-top: -284px;
+    background-color: rgb(61, 114, 212, 0.8);
+    z-index: 1;
+} 
+
+.wrapper-logos {
+    width: 900px;
+    position: absolute;
+    margin-top: -160px;
+    padding-left: 370px;
+    justify-content: space-between;
+}
+
+.firstLogo {
+    width: 150px;
+    position: absolute;
+    color: white;
+    z-index: 3;
+}
+
+.secondLogo {
+    width: 150px;
+    margin-left: 250px;
+    position: absolute;
+    color: white;
+    z-index: 3;
+}
+
+.thirdLogo {
+    width: 150px;
+    margin-left: 500px;
+    position: absolute;
+    color: white;
+    z-index: 3;
+}
+
+.fourthLogo {
+    width: 150px;
+    margin-left: 750px;
+    position: absolute;
+    color: white;
+    z-index: 3;
+}
+
+.fifthLogo {
+    width: 150px;
+    margin-left: 1000px;
+    position: absolute;
+    color: white;
+    z-index: 3;
+}
+
+/* --------------------Book Appointment-------------------------*/
+
+.bookAppointment {
+    width: 800px;
+    height: 400px;
+    margin-left: 620px;
+    justify-content: center;
+}
+
+h3 {
+    width: 640px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.section {
+    width: 60px;
+    margin-left: 285px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.bookAppointment p {
+    width: 600px;
+    margin-bottom: 50px ;
+    text-align: center;
+    color: grey;
+    font-size: 20px;
+}
+
+#wrapper {
+    width: 700px;
+    margin-left: 380px;
+    justify-content: space-between;
+}
+
+#name {
+    width: 250px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    color: grey;
+}
+
+#email {
+    width: 250px;
+    height: 50px;
+    margin-left: 20px;
+    padding-left: 15px;
+    color: grey;
+}
+
+#phone {
+    width: 250px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    color: grey;
+}
+
+#department {
+    width: 250px;
+    height: 50px;
+    margin-left: 20px;
+
+    padding-left: 15px;
+    color: grey;
+}
+
+#doctor {
+    width: 250px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    color: grey;
+}
+
+#date {
+    width: 250px;
+    height: 50px;
+    margin-left: 20px;
+    padding-left: 15px;
+    color: grey;
+}
+
+#message {
+    width: 523px;
+    height: 200px;
+    padding-left: 15px;
+    color: grey;
+}
+
+#AppointmentBTN {
+    width: 250px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-weight: 700;
+    color: white;
+    background-color:rgb(61, 114, 212);
+    border: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+#AppointmentBTN:hover,
+#AppointmentBTN:focus {
+    cursor: pointer;
+    border-color: black;
+    color: white;
+    box-shadow:
+        inset -11.5em 0 0 0 black,
+        inset 11.5em 0 0 0 black;
+}
+
+.confirm {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 270px;
+    color: grey;
+}
+
+#doctors {
+    position: absolute;
+    margin-top: -432px;
+    margin-left: 280px;
+}
+
+/* --------------------Newsletter Sign up-------------------------*/
+
+#newsletterwrapper {
+    width: 100%;
+    height: 250px;
+    margin-top: 31px;
+    background-color: rgb(207, 220, 243);
+}
+
+.SignUp {
+    padding-top: 80px;
+    padding-left: 375px;
+    font-size: 22px;
+}
+
+.CommentSignUp {
+    width: 850px;
+    padding-top: 10px;
+    padding-left: 375px;
+    font-size: 18px;
+    color: grey;
+}
+
+#emailadress {
+    width: 300px;
+    height: 60px;
+    position: absolute;
+    font-weight: 500;
+    margin-top: -85px;
+    margin-left: 900px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+#subscribe {
+    width: 210px;
+    height: 60px;
+    position: absolute;
+    margin-top: -85px;
+    margin-left: 1210px;
+    color: white;
+    background-color: rgb(61, 114, 212);
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+#subscribe:hover,
+#subscribe:focus {
+    cursor: pointer;
+    border-color: black;
+    color: white;
+    box-shadow:
+        inset -11.5em 0 0 0 black,
+        inset 11.5em 0 0 0 black;
+}
+
+/* --------------------Footer-------------------------*/
+
+footer {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(61, 114, 212);
+}
+
+#footer-wrap {
+    width: 1150px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footerContainers {
+    width: 300px;
+}
+
+.footerContainers h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.footerContainers hr {
+    width: 50px;
+    border-top: 2px solid white;
+}
+
+.footerContainers p {
+    width: 230px;
+    margin-top: 30px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.socials {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 180px;
+    color: white;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.social-size {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding-top: 7px;
+    padding-left: 8px;
+}
+
+.social-size:hover {
+    cursor: pointer;
+    color:  rgb(61, 114, 212);
+    background-color: white;
+}
+
+.footerContainers ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 0px;
+    color: white;
+    font-size: 24px;
+}
+
+.footerContainers li {
+    margin-top: -24px;
+    margin-left: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 3.5;
+}
+
+.footerContainers .right-links {
+    position: absolute;
+    margin-top: -148px;
+    margin-left: 160px;
+}
+
+.footerContainers li:hover {
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.fa-solid.fa-caret-right.fa-2xs:hover {
+    margin-left: 15px;
+    transition: 0.25s;
+}
+
+.footerContainers .daysLeft2 {
+    width: 150px;
+    padding-top: 20px;
+    line-height: 1.5;
+    color: white;
+}
+
+.timeRight {
+    margin-top: -70px;
+    margin-left: 170px;
+    color: white;
+}
+
+.footerContainers .timeRight .time {
+    line-height: 1.5;
+}
+
+#email-address {
+    width: 230px;
+    height:  60px;
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 870px;
+    padding-left: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+}
+
+#email-address:hover {
+    padding-left: 30px;
+    transition: 0.25s;
+}
+
+.fa-solid.fa-paper-plane {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 1040px;
+    padding-top: 20px;
+    padding-left: 18px;
+    border-radius: 5px;
+    color: rgb(61, 114, 212);
+    background-color: white;
+    font-size: 20px;
+}
+
+.fa-solid.fa-paper-plane:hover {
+    cursor: pointer;
+}
+
+#copyright {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    margin-top: 350px;
+    color: white;
+    background-color: rgb(48, 97, 187);
+}
+
+i.fa-regular.fa-copyright {
+    font-size: 12px;
+    margin-left: 750px;
+    padding-top: 15px;
+    padding-right: 10px;
+}
+
+#copyright p {
+    width: 400px;
+    padding-top: 15px;
+    margin-right: 650px;
+    font-size: 14px;
+    color: white;
+}
+
+.linkWebpage {
+    color: white;
+}
+
+#myTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: rgb(48, 97, 187);
+    border: 1px solid rgb(27, 58, 116);
+    border-radius: 5px;
+    outline: none;
+}
+
+#myTopBtn:hover {
+    cursor: pointer;
+    background-color: black;
+}
